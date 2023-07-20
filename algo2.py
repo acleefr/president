@@ -58,29 +58,31 @@ def card_counting(cards, card_amount, num_players):                #count the ca
 
 def player_creation(cards, card_amount, num_players):
     player_cards = []
-    m = 0  # Initialized m
+    player_id = 0  # Initialized player_id
 
-    while m < num_players:
-            player_cards.insert(m, "player" + str(m + 1))
-            m = m + 1
+    while player_id < num_players:
+            player_cards.insert(player_id, "player" + str(player_id + 1))
+            player_id = player_id + 1
     
     return card_distribution(cards, card_amount, num_players, player_cards)
 
 def card_distribution(cards, card_amount, num_players, player_cards):                #distribute the cards
     player = {}
-    k = 0  # Initialized k
-    p = 0  # Initialized p
-    m = 0  # Initialized m
+    card_id = 0  # Initialized card_id
+    deck_id = 0  # Initialized deck_id
+    player_id = 0  # Initialized player_id
 
-    while k < 51:
-        while p < card_amount:
-            while m < num_players:
-                player[player_cards[m]] = [] * card_amount
-                print(k)
-                player[player_cards[m]].insert(p,cards[k])
-                m = m + 1
-                k = k + 1
-            m = 0
-            p = p + 1
+    while card_id < 51:
+        while deck_id < card_amount:
+            while player_id < num_players:
+                player[player_cards[player_id]] = [] * card_amount
+                #sprint(card_id)
+                player[player_cards[player_id]].insert(deck_id,cards[card_id])
+                player_id = player_id + 1
+                card_id = card_id + 1
+                print(deck_id)
+            player_id = 0
+            deck_id = deck_id + 1
+            print(player)
 
 num_players()
