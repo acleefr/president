@@ -67,22 +67,44 @@ def player_creation(cards, card_amount, num_players):
     return card_distribution(cards, card_amount, num_players, player_cards)
 
 def card_distribution(cards, card_amount, num_players, player_cards):                #distribute the cards
+    
     player = {}
     card_id = 0  # Initialized card_id
     deck_id = 0  # Initialized deck_id
     player_id = 0  # Initialized player_id
+    
+
+    while player_id < num_players:
+        
+        player[player_cards[player_id]] = [0] * card_amount
+        player_id = player_id + 1
+
+    player_id = 0  # Initialized player_id
+
 
     while card_id < 51:
+        
         while deck_id < card_amount:
+            
             while player_id < num_players:
-                player[player_cards[player_id]] = [] * card_amount
+                
                 #sprint(card_id)
-                player[player_cards[player_id]].insert(deck_id,cards[card_id])
+                #player[player_cards[player_id]].insert(deck_id,cards[card_id])
+                player[player_cards[player_id]] = (cards[card_id])
                 player_id = player_id + 1
                 card_id = card_id + 1
-                print(deck_id)
+
             player_id = 0
             deck_id = deck_id + 1
-            print(player)
+
+    player_id = 0  # Initialized player_id
+
+
+    while player_id < num_players:
+        print("player", player_id+1, " : ")
+        print(player[player_cards[player_id]])
+        print("\n")
+        player_id = player_id + 1
+    
 
 num_players()
