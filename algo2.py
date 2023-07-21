@@ -73,38 +73,31 @@ def card_distribution(cards, card_amount, num_players, player_cards):           
     deck_id = 0  # Initialized deck_id
     player_id = 0  # Initialized player_id
     
-
     while player_id < num_players:
-        
-        player[player_cards[player_id]] = [0] * card_amount
+        player[player_cards[player_id]] = []  # Initialize each player's card list as an empty list
         player_id = player_id + 1
 
-    player_id = 0  # Initialized player_id
+    player_id = 0  # Reset player_id
 
-
-    while card_id < 51:
+    while card_id < len(cards):   # use len(cards) instead of hardcoding 51
         
         while deck_id < card_amount:
             
-            while player_id < num_players:
+            while player_id < num_players and card_id < len(cards):  # Added card_id check to ensure we don't exceed cards list length
                 
-                #sprint(card_id)
-                #player[player_cards[player_id]].insert(deck_id,cards[card_id])
-                player[player_cards[player_id]] = (cards[card_id])
+                player[player_cards[player_id]].append(cards[card_id])  # Append the card to the player's card list
                 player_id = player_id + 1
                 card_id = card_id + 1
 
             player_id = 0
             deck_id = deck_id + 1
 
-    player_id = 0  # Initialized player_id
-
+    player_id = 0  # Reset player_id
 
     while player_id < num_players:
         print("player", player_id+1, " : ")
         print(player[player_cards[player_id]])
         print("\n")
         player_id = player_id + 1
-    
 
 num_players()
