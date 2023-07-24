@@ -126,6 +126,8 @@ def choose_a_card(player_cards, player, playing_player):
 
     if card_played in player[player_cards[playing_player]]:
         print("you played the card : "+card_played)
+        #add last card played in card_in_game array
+        card_in_game = []
     else:
         print("you don't have this card")
         choose_a_card(player_cards, player, playing_player)
@@ -141,6 +143,19 @@ def remove_played_card(player_cards, player, playing_player, card_played):
     print("your deck now \n")
     print(player[player_cards[playing_player]])
 
+    return next_player(player_cards, player, playing_player, card_played)
 
+def next_player(player_cards, player, playing_player, card_played):
+
+        #annoiunce the card played by the last player
+        print("the card played is : "+card_played)
+
+        #change the player
+        playing_player = playing_player + 1
+    
+        if playing_player == len(player_cards):
+            playing_player = 0
+    
+        return choose_a_card(player_cards, player, playing_player)
 
 num_players()
