@@ -100,19 +100,47 @@ def card_distribution(cards, card_amount, num_players, player_cards):           
         print("\n")
         player_id = player_id + 1
 
-    return first_round(player_cards, player, num_players)
+    return first_round(player_cards, player, num_players, card_amount)
 
-def first_round(player_cards, player, num_players):
+def first_round(player_cards, player, num_players, card_amount):
     
     print("\n")
     print("first round")
 
     playing_player = 0
+    printed_card = 0
 
-    #display the card of player 1
+    while printed_card < card_amount:
+        print("card "+str(printed_card+1)+" : ")
+        print(player[player_cards[playing_player]][printed_card])
+        printed_card = printed_card + 1
+
+    choose_a_card(player_cards, player, playing_player)
+
+def choose_a_card(player_cards, player, playing_player):
+    
+    #ask the player to choose a card
+    print("\n")
+    print("choose a card to play")
+    card_played = input()
+
+    if card_played in player[player_cards[playing_player]]:
+        print("you played the card : "+card_played)
+    else:
+        print("you don't have this card")
+        choose_a_card(player_cards, player, playing_player)
+
+    return remove_played_card(player_cards, player, playing_player, card_played)
+
+def remove_played_card(player_cards, player, playing_player, card_played):
+
+    #remove the card from the player's hand
+    player[player_cards[playing_player]].remove(card_played)
+
+    #print all the player card
+    print("your deck now \n")
     print(player[player_cards[playing_player]])
 
-    #display the first card of player 1
-    print()
+
 
 num_players()
