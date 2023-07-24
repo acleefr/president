@@ -105,8 +105,12 @@ def first_round():
     print("\n")
     print("first round")
 
-    # randomly select a player to start the game
-                
-    random_player = random.randint(1, 10)
+    # randomly select a player to start the game on the amount of players
+    random_player = random.randint(1, num_players)
+    print("player", random_player, "starts the game")
+
+    # the player who starts the game will play a card
+    
+    
 
 num_players()
