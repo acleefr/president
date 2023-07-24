@@ -100,17 +100,17 @@ def card_distribution(cards, card_amount, num_players, player_cards):           
         print("\n")
         player_id = player_id + 1
 
-def first_round():
+    return first_round(player_cards, player, num_players)
+
+def first_round(player_cards, player, num_players):
     
     print("\n")
     print("first round")
 
-    # randomly select a player to start the game on the amount of players
-    random_player = random.randint(1, num_players)
-    print("player", random_player, "starts the game")
+    playing_player = 0
 
-    # the player who starts the game will play a card
-    
+    #display the card of player 1
+    print(player[player_cards[playing_player]])
     
 
 num_players()
