@@ -111,6 +111,8 @@ def first_round(player_cards, player, num_players):
 
     #display the card of player 1
     print(player[player_cards[playing_player]])
-    
+
+    #display the first card of player 1
+    print()
 
 num_players()
