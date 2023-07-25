@@ -115,7 +115,7 @@ def first_round(player_cards, player, num_players, card_amount):
         print(player[player_cards[playing_player]][printed_card])
         printed_card = printed_card + 1
 
-    choose_a_card(player_cards, player, playing_player)
+    choose_a_card(player_cards, player, playing_player),
 
 def choose_a_card(player_cards, player, playing_player):
     
@@ -157,5 +157,7 @@ def next_player(player_cards, player, playing_player, card_played):
             playing_player = 0
     
         return choose_a_card(player_cards, player, playing_player)
+
+#ilfaut push chaque jlur
 
 num_players()
