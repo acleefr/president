@@ -158,6 +158,6 @@ def next_player(player_cards, player, playing_player, card_played):
     
         return choose_a_card(player_cards, player, playing_player)
 
-#ilfaut push chaque jlur
+#ilfaut push chaque jlur dans un tableau et faire un random pour choisir le premier joueur
 
 num_players()
