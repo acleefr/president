@@ -1,6 +1,6 @@
 # French Card Game "President" Repository
 
-This repository contains the implementation of the French card game "President" using Python for the terminal-based version and React with TypeScript for the graphical version.
+This repository contains the implementation of the French card game "President" using Python for the terminal-based version and React with TypeScript for the graphical version. I just do it for fun.
 
 ## Game Rules
 
